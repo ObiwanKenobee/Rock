@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07130f">
+<title>ROCK ATLAS — African Financial Intelligence</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#07130f;--panel:#0d1d17;--panel2:#10251d;--line:rgba(204,177,111,.18);--gold:#d7b875;--gold2:#f2d99c;--green:#7bd4a7;--muted:#9aaca1;--white:#f2f4ed;--mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;--display:'Manrope',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.noise{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E")}
+#stars{position:fixed;inset:0;z-index:-1;opacity:.65}.glow{position:absolute;width:550px;height:550px;border-radius:50%;filter:blur(110px);pointer-events:none;opacity:.12}.glow.a{background:#b18a3c;top:5%;right:-15%}.glow.b{background:#168b61;top:70%;left:-22%}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}.eyebrow{font:11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:26px;height:1px;background:var(--gold)}.serif{font-family:Georgia,serif;font-weight:400;letter-spacing:-.045em}
+header{height:82px;display:flex;align-items:center;position:sticky;top:0;z-index:20;background:rgba(7,19,15,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}.nav{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;letter-spacing:.12em;font-size:13px}.sigil{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:18px Georgia;box-shadow:0 0 22px #d7b87522}.navlinks{display:flex;gap:28px;color:#bdc9c1;font-size:12px}.navlinks a:hover{color:var(--gold2)}.nav-cta,.btn{border:1px solid var(--line);padding:11px 16px;border-radius:3px;color:var(--gold2);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:transparent;cursor:pointer;transition:.25s}.nav-cta:hover,.btn:hover{background:var(--gold);color:#10170f;box-shadow:0 0 25px #d7b87533}.menu{display:none;background:none;color:var(--white);border:0;font-size:24px}
+.hero{min-height:690px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;padding:78px 0 92px;position:relative}.hero h1{font:500 clamp(48px,6.3vw,82px)/.99 Georgia,serif;letter-spacing:-.055em;margin:25px 0 22px}.hero h1 em{color:var(--gold2);font-style:italic}.hero-copy{max-width:550px;color:#b4c1b8;font-size:15px;line-height:1.8}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.btn.primary{background:var(--gold);color:#10170f;border-color:var(--gold);font-weight:700}.hero-meta{display:flex;gap:28px;margin-top:46px;padding-top:22px;border-top:1px solid var(--line)}.meta strong{display:block;font:22px Georgia;color:var(--gold2);font-weight:400}.meta span{font:9px var(--mono);color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.orbit-wrap{height:510px;position:relative;display:grid;place-items:center}.orbit{width:min(440px,90vw);aspect-ratio:1;border:1px solid #d7b87533;border-radius:50%;position:relative;display:grid;place-items:center;box-shadow:0 0 100px #b28b3520,inset 0 0 90px #1d67401a}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #d7b87525;border-radius:50%;inset:11%}.orbit:after{inset:24%;border-color:#7bd4a733}.orbit-ring{position:absolute;inset:-5%;border:1px dashed #d7b87533;border-radius:50%;animation:spin 65s linear infinite}.orbit-ring.two{inset:7%;animation-direction:reverse;animation-duration:45s}.planet{width:185px;height:185px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#d7c18b,#547d61 28%,#143c2b 58%,#06120d 78%);box-shadow:inset -25px -20px 45px #020906,0 0 65px #63b98930;position:relative;overflow:hidden}.planet:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(165deg,transparent 0 12px,#d9c58a12 13px 14px)}.orbit-label{position:absolute;font:9px var(--mono);letter-spacing:.14em;color:var(--gold2);background:#0a1913;padding:7px 10px;border:1px solid var(--line)}.l1{top:12%;left:5%}.l2{right:-2%;top:38%}.l3{bottom:12%;left:15%}.orbit-dot{position:absolute;width:8px;height:8px;background:var(--gold2);border-radius:50%;box-shadow:0 0 16px var(--gold);top:14%;left:50%}.orbit-caption{position:absolute;bottom:2%;font:10px var(--mono);color:var(--muted);letter-spacing:.15em;text-align:center}
+@keyframes spin{to{transform:rotate(360deg)}}.section{padding:105px 0;border-top:1px solid rgba(255,255,255,.055)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.section h2{font:400 clamp(36px,4.5vw,58px)/1.05 Georgia;margin:16px 0 0;letter-spacing:-.04em}.section-intro{max-width:420px;color:var(--muted);font-size:13px;line-height:1.8}.grid{display:grid;gap:14px}.engines{grid-template-columns:repeat(3,1fr)}.card{background:linear-gradient(145deg,#10231b,#0a1812);border:1px solid var(--line);padding:25px;position:relative;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-5px);border-color:#d7b87566;box-shadow:0 18px 45px #0004}.card:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#c6a55a0b;right:-55px;top:-55px}.icon{width:38px;height:38px;border:1px solid #d7b87555;display:grid;place-items:center;color:var(--gold2);font-size:18px;margin-bottom:25px}.card h3{font:600 17px var(--display);margin:0 0 10px}.card p{font-size:12px;color:var(--muted);line-height:1.75;margin:0}.tag{display:inline-block;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:20px}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:18px}.identity{padding:34px;background:linear-gradient(135deg,#13271e,#0b1913);border:1px solid var(--line);min-height:270px;position:relative}.identity .word{font:36px Georgia;color:var(--gold2);margin:24px 0 12px}.identity p{color:var(--muted);font-size:13px;line-height:1.8;max-width:450px}.identity .role{font:10px var(--mono);letter-spacing:.15em;color:var(--green);text-transform:uppercase}.identity.bedrock{background:linear-gradient(135deg,#15271f,#101b17)}
+.lab{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.lab-controls,.lab-result{background:#0d1d17;border:1px solid var(--line);padding:28px}.lab-controls h3,.lab-result h3{font:24px Georgia;margin:0 0 10px}.lab-controls p{font-size:12px;color:var(--muted);line-height:1.7}.control{margin:24px 0}.control label{display:flex;justify-content:space-between;font:10px var(--mono);color:#c6d1c9;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}.control output{color:var(--gold2)}input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}.run{width:100%;margin-top:12px}.result-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.result-top span{font:9px var(--mono);color:var(--green);letter-spacing:.14em}.risk-score{font:48px Georgia;color:var(--gold2)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.metric{padding:14px;background:#13271e}.metric strong{display:block;font:22px Georgia;color:var(--white)}.metric small{font:9px var(--mono);color:var(--muted);text-transform:uppercase}.bar-list{display:grid;gap:13px}.barrow{display:grid;grid-template-columns:120px 1fr 36px;gap:10px;align-items:center;font-size:10px;color:#c5d0c8}.track{height:5px;background:#26382e}.fill{height:100%;background:linear-gradient(90deg,#4a9c70,var(--gold));transition:width .4s}.note{font-size:10px;color:var(--muted);line-height:1.6;margin-top:20px}
+.agents{grid-template-columns:repeat(4,1fr)}.agent{padding:20px;background:#0d1d17;border:1px solid var(--line)}.agent .num{font:10px var(--mono);color:var(--gold)}.agent h4{font:600 14px var(--display);margin:17px 0 7px}.agent p{font-size:11px;color:var(--muted);line-height:1.65;margin:0}
+.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.phase{padding:20px 17px;border-top:1px solid var(--gold);position:relative}.phase:before{content:"";position:absolute;top:-4px;left:18px;width:7px;height:7px;border-radius:50%;background:var(--gold)}.phase small{font:9px var(--mono);color:var(--gold);letter-spacing:.1em}.phase h4{font:15px var(--display);margin:15px 0 8px}.phase p{font-size:11px;color:var(--muted);line-height:1.7}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.principle{border:1px solid var(--line);padding:20px;text-align:center}.principle b{font:17px Georgia;color:var(--gold2);display:block;margin-bottom:8px}.principle span{font:9px var(--mono);color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.cta{padding:75px 30px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#29452e 0%,#102219 45%,#0b1711 100%);border:1px solid var(--line);position:relative;overflow:hidden}.cta h2{font:400 clamp(36px,5vw,58px) Georgia;margin:18px auto;max-width:750px}.cta p{color:var(--muted);font-size:13px;line-height:1.8;max-width:600px;margin:0 auto 28px}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot strong{color:var(--gold2);letter-spacing:.12em}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}.toast{position:fixed;bottom:25px;right:25px;background:#193327;border:1px solid var(--gold);padding:13px 18px;color:var(--gold2);font:11px var(--mono);z-index:40;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none}.toast.show{opacity:1;transform:none}
+@media(max-width:850px){.navlinks{display:none;position:absolute;top:81px;left:0;right:0;padding:25px;background:#091710;flex-direction:column;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero{grid-template-columns:1fr;padding-top:65px}.orbit-wrap{height:390px;order:-1}.hero h1{font-size:58px}.engines{grid-template-columns:repeat(2,1fr)}.agents{grid-template-columns:repeat(2,1fr)}.lab{grid-template-columns:1fr}.roadmap{grid-template-columns:1fr 1fr}.section-head{display:block}.section-intro{margin-top:20px}.principles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.container{width:min(100% - 32px,1180px)}header{height:70px}.navlinks{top:69px}.hero{padding:45px 0 70px}.hero h1{font-size:48px}.hero-meta{gap:16px}.meta strong{font-size:18px}.orbit-wrap{height:330px}.orbit{width:300px}.planet{width:130px;height:130px}.orbit-label{font-size:7px}.l2{right:-4%}.section{padding:75px 0}.engines,.dual{grid-template-columns:1fr}.agents{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.phase{margin-left:8px;border-top:0;border-left:1px solid var(--gold);padding:5px 20px 25px}.phase:before{top:8px;left:-4px}.metrics{grid-template-columns:1fr 1fr}.barrow{grid-template-columns:90px 1fr 30px}.foot{display:block;line-height:2.2}.identity{min-height:230px}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas><div class="noise"></div><div class="glow a"></div><div class="glow b"></div>
+<header><div class="container nav">
+<a class="brand" href="#home"><span class="sigil">✧</span><span>ROCK ATLAS</span></a>
+<nav class="navlinks" id="navlinks"><a href="#vision">Vision</a><a href="#engines">Intelligence</a><a href="#lab">Simulation Lab</a><a href="#agents">AI Research</a><a href="#roadmap">Roadmap</a></nav>
+<a class="nav-cta" href="#lab">Explore the prototype ↗</a><button class="menu" id="menu" aria-label="Open navigation">☰</button>
+</div></header>
+<main id="home">
+<section class="container hero">
+<div class="hero-text">
+<div class="eyebrow">An African-born intelligence initiative</div>
+<h1>See the market.<br><em>Understand</em><br>what moves it.</h1>
+<p class="hero-copy">An evolving intelligence infrastructure for African capital markets. ROCK ATLAS brings together market research, liquidity intelligence, risk analysis and scenario simulation to make complex financial systems more understandable.</p>
+<div class="hero-actions"><a class="btn primary" href="#vision">Explore the vision ↗</a><a class="btn" href="#lab">Enter simulation lab</a></div>
+<div class="hero-meta"><div class="meta"><strong>01</strong><span>Market foundation</span></div><div class="meta"><strong>08</strong><span>Intelligence frontiers</span></div><div class="meta"><strong>∞</strong><span>Questions to explore</span></div></div>
+</div>
+<div class="orbit-wrap" aria-label="Abstract digital globe illustration">
+<div class="orbit"><div class="orbit-ring"></div><div class="orbit-ring two"></div><div class="planet"></div><i class="orbit-dot"></i><span class="orbit-label l1">MARKET SIGNALS</span><span class="orbit-label l2">CAPITAL FLOWS</span><span class="orbit-label l3">RESILIENCE</span></div>
+<div class="orbit-caption">KENYA · EAST AFRICA · THE CONTINENT</div>
+</div>
+</section>
+<section class="section" id="vision"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">The larger possibility</div><h2>From market analytics<br>to <em class="serif">market intelligence.</em></h2></div><p class="section-intro">Not another dashboard that simply displays what happened. A system designed to investigate why markets behave as they do, where vulnerabilities emerge and how different futures might unfold.</p></div>
+<div class="dual reveal">
+<div class="identity"><div class="role">The umbrella platform</div><div class="word">ROCK ATLAS</div><p>African Capital Markets Intelligence & Resilience Infrastructure. The shared architecture for data, research, explainable analytics, simulation and decision support.</p></div>
+<div class="identity bedrock"><div class="role">Foundational resilience engine</div><div class="word">BEDROCK</div><p>Liquidity, market depth, foreign capital outflows, crash-risk research, unusual trading behaviour and stress testing. The specialist engine that helps reveal what lies beneath market performance.</p></div>
+</div>
+</div></section>
+<section class="section" id="engines"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">The intelligence architecture</div><h2>Eight engines.<br><em class="serif">One connected system.</em></h2></div><p class="section-intro">A modular architecture where each engine has a defined responsibility, shared data foundations and traceable analytical outputs.</p></div>
+<div class="grid engines">
+<div class="card reveal"><div class="icon">⌁</div><h3>Market Intelligence</h3><p>Investigate market movements, trading activity, sector behaviour and concentration.</p><span class="tag">Observe the market</span></div>
+<div class="card reveal"><div class="icon">≈</div><h3>Liquidity Intelligence</h3><p>Measure market depth, trading constraints, exit capacity and liquidity stress.</p><span class="tag">Understand market depth</span></div>
+<div class="card reveal"><div class="icon">⬡</div><h3>Risk & Resilience</h3><p>Explore crash risk, portfolio exposure, capital outflows and systemic vulnerabilities.</p><span class="tag">Powered by Bedrock</span></div>
+<div class="card reveal"><div class="icon">◎</div><h3>Opportunity Intelligence</h3><p>Compare securities using transparent evidence, valuation, liquidity and risk factors.</p><span class="tag">Discover with context</span></div>
+<div class="card reveal"><div class="icon">✳</div><h3>Predictive Intelligence</h3><p>Test forecasting signals, identify anomalies and evaluate model uncertainty.</p><span class="tag">Explore possible futures</span></div>
+<div class="card reveal"><div class="icon">⌘</div><h3>Capital Flow Observatory</h3><p>Study domestic and foreign participation, capital concentration and cross-market relationships.</p><span class="tag">Follow the capital</span></div>
+<div class="card reveal"><div class="icon">◇</div><h3>Impact Finance Intelligence</h3><p>Investigate sustainable finance claims, project evidence and reported development outcomes.</p><span class="tag">Connect finance to outcomes</span></div>
+<div class="card reveal"><div class="icon">✧</div><h3>Decision Intelligence</h3><p>Turn analytical outputs into evidence-linked research, explanations and institutional reports.</p><span class="tag">Make evidence usable</span></div>
+</div>
+</div></section>
+<section class="section" id="lab"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">Interactive concept · illustrative only</div><h2>The market <em class="serif">what-if</em> laboratory.</h2></div><p class="section-intro">Explore how a hypothetical combination of shocks could change market pressure. This is a design prototype, not a calibrated forecast or a representation of live NSE data.</p></div>
+<div class="lab reveal">
+<div class="lab-controls"><h3>Design a scenario</h3><p>Adjust the assumptions. The illustrative pressure indicator responds instantly.</p>
+<div class="control"><label>Foreign capital outflow <output id="outflowVal">5.0bn KES</output></label><input id="outflow" type="range" min="0" max="20" value="5" step=".5"></div>
+<div class="control"><label>Interest-rate shock <output id="rateVal">2.0%</output></label><input id="rate" type="range" min="0" max="8" value="2" step=".25"></div>
+<div class="control"><label>Currency depreciation <output id="fxVal">7%</output></label><input id="fx" type="range" min="0" max="20" value="7" step="1"></div>
+<div class="control"><label>Trading activity decline <output id="tradeVal">30%</output></label><input id="trade" type="range" min="0" max="70" value="30" step="5"></div>
+<button class="btn primary run" id="reset">Reset scenario ↺</button>
+</div>
+<div class="lab-result"><div class="result-top"><div><span>ILLUSTRATIVE SYSTEM PRESSURE</span><div class="risk-score" id="score">42<span style="font-size:18px;color:#9aaca1"> / 100</span></div></div><span id="riskLabel">MODERATE SCENARIO</span></div>
+<div class="metrics"><div class="metric"><strong id="capitalMetric">5.0bn</strong><small>Outflow input</small></div><div class="metric"><strong id="fxMetric">7%</strong><small>FX shock</small></div><div class="metric"><strong id="tradeMetric">30%</strong><small>Activity decline</small></div></div>
+<div class="bar-list">
+<div class="barrow"><span>Capital pressure</span><div class="track"><div class="fill" id="bar1" style="width:25%"></div></div><b id="b1">25</b></div>
+<div class="barrow"><span>Rate sensitivity</span><div class="track"><div class="fill" id="bar2" style="width:25%"></div></div><b id="b2">25</b></div>
+<div class="barrow"><span>FX exposure</span><div class="track"><div class="fill" id="bar3" style="width:35%"></div></div><b id="b3">35</b></div>
+<div class="barrow"><span>Liquidity pressure</span><div class="track"><div class="fill" id="bar4" style="width:30%"></div></div><b id="b4">30</b></div>
+</div><p class="note">Prototype methodology: a simple normalized weighted illustration of user-selected shocks. It does not estimate actual security-level losses, market outcomes or probabilities. A production model would require validated historical data, calibrated relationships and uncertainty analysis.</p>
+</div></div>
+</div></section>
+<section class="section" id="agents"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">Agentic research laboratory</div><h2>A research team,<br><em class="serif">not a magic answer box.</em></h2></div><p class="section-intro">Specialist agents can coordinate research tasks while using shared, permissioned data and tested analytical tools. Their conclusions remain reviewable by people.</p></div>
+<div class="grid agents">
+<div class="agent reveal"><span class="num">AGENT 01</span><h4>Market Analyst</h4><p>Studies prices, volumes, sectors and market structure.</p></div>
+<div class="agent reveal"><span class="num">AGENT 02</span><h4>Liquidity Analyst</h4><p>Investigates depth, exit capacity and trading constraints.</p></div>
+<div class="agent reveal"><span class="num">AGENT 03</span><h4>Capital Flow Analyst</h4><p>Examines participation, ownership and capital movements.</p></div>
+<div class="agent reveal"><span class="num">AGENT 04</span><h4>Risk Researcher</h4><p>Runs risk analysis, scenario tests and model comparisons.</p></div>
+<div class="agent reveal"><span class="num">AGENT 05</span><h4>Fundamental Analyst</h4><p>Reviews financial statements, business performance and valuation.</p></div>
+<div class="agent reveal"><span class="num">AGENT 06</span><h4>Macro Analyst</h4><p>Connects rates, inflation, currency and market conditions.</p></div>
+<div class="agent reveal"><span class="num">AGENT 07</span><h4>Opportunity Researcher</h4><p>Compares securities and explains the evidence behind screens.</p></div>
+<div class="agent reveal"><span class="num">AGENT 08</span><h4>Research Auditor</h4><p>Checks sources, assumptions, calculations and unsupported claims.</p></div>
+</div>
+</div></section>
+<section class="section" id="roadmap"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">A deliberate path to scale</div><h2>Build the foundation.<br><em class="serif">Earn the frontier.</em></h2></div><p class="section-intro">A capability-led roadmap. Each phase should be demonstrated, validated and governed before the next layer is added.</p></div>
+<div class="roadmap reveal">
+<div class="phase"><small>PHASE 01</small><h4>Unify</h4><p>Governance, repository integration, shared data schema and reproducible research.</p></div>
+<div class="phase"><small>PHASE 02</small><h4>Understand</h4><p>Company intelligence, capital-flow observatory and research workflows.</p></div>
+<div class="phase"><small>PHASE 03</small><h4>Simulate</h4><p>Kenya market digital twin, scenario laboratory and model uncertainty.</p></div>
+<div class="phase"><small>PHASE 04</small><h4>Connect</h4><p>Regional data interoperability and East African market comparisons.</p></div>
+<div class="phase"><small>PHASE 05</small><h4>Allocate</h4><p>Capital allocation research, infrastructure finance and impact intelligence.</p></div>
+</div>
+</div></section>
+<section class="section"><div class="container">
+<div class="section-head reveal"><div><div class="eyebrow">The principles beneath the platform</div><h2>Intelligence with <em class="serif">integrity.</em></h2></div></div>
+<div class="principles reveal"><div class="principle"><b>Evidence</b><span>Trace every claim</span></div><div class="principle"><b>Transparency</b><span>Explain the method</span></div><div class="principle"><b>Stewardship</b><span>Respect the impact</span></div><div class="principle"><b>Openness</b><span>Build for collaboration</span></div></div>
+</div></section>
+<section class="section"><div class="container"><div class="cta reveal"><div class="eyebrow" style="justify-content:center">The next chapter begins with a question</div><h2>What could African financial intelligence make possible?</h2><p>We are bringing together research, engineering and imagination to build a more transparent and resilient understanding of African capital markets.</p><a class="btn primary" href="https://github.com/trevorblue/bedrock" target="_blank" rel="noopener">Explore the Bedrock foundation ↗</a></div></div></section>
+</main>
+<footer><div class="container foot"><div><strong>ROCK ATLAS</strong><br>AFRICAN FINANCIAL INTELLIGENCE & RESILIENCE</div><div>Concept website · Research-led · Built for possibility</div><div>© <span id="year"></span> ROCK ATLAS</div></div></footer>
+<div class="toast" id="toast">Scenario reset to baseline.</div>
+<script>
+const $=s=>document.querySelector(s);
+$('#year').textContent=new Date().getFullYear();
+$('#menu').addEventListener('click',()=>$('#navlinks').classList.toggle('open'));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>$('#navlinks').classList.remove('open')));
+const sliders=['outflow','rate','fx','trade'];
+function update(){
+ const o=+$('#outflow').value,r=+$('#rate').value,f=+$('#fx').value,t=+$('#trade').value;
+ $('#outflowVal').textContent=o.toFixed(1)+'bn KES';$('#rateVal').textContent=r.toFixed(2)+'%';$('#fxVal').textContent=f+'%';$('#tradeVal').textContent=t+'%';
+ const vals=[Math.min(100,o/20*100),Math.min(100,r/8*100),Math.min(100,f/20*100),Math.min(100,t/70*100)];
+ const score=Math.round(vals[0]*.35+vals[1]*.2+vals[2]*.2+vals[3]*.25);
+ $('#score').innerHTML=score+'<span style="font-size:18px;color:#9aaca1"> / 100</span>';
+ ['bar1','bar2','bar3','bar4'].forEach((id,i)=>{$('#'+id).style.width=vals[i]+'%';$('#b'+(i+1)).textContent=Math.round(vals[i])});
+ $('#capitalMetric').textContent=o.toFixed(1)+'bn';$('#fxMetric').textContent=f+'%';$('#tradeMetric').textContent=t+'%';
+ $('#riskLabel').textContent=score<34?'LOW PRESSURE SCENARIO':score<67?'MODERATE SCENARIO':'ELEVATED PRESSURE SCENARIO';
+}
+sliders.forEach(id=>$('#'+id).addEventListener('input',update));
+$('#reset').addEventListener('click',()=>{['5','2','7','30'].forEach((v,i)=>$('#'+sliders[i]).value=v);update();const toast=$('#toast');toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)});
+update();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const canvas=$('#stars'),ctx=canvas.getContext('2d');let stars=[];
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(110,Math.floor(innerWidth/11))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+.2,a:Math.random()*.5+.12,s:Math.random()*.18+.025}))}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);stars.forEach(p=>{p.y-=p.s;if(p.y<0)p.y=innerHeight;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(221,202,151,${p.a})`;ctx.fill()});requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();
+</script>
+</body></html>
